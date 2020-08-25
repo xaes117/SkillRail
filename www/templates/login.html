@@ -1,0 +1,27 @@
+<ion-view title="Welcome" id="page6" hide-nav-bar="true">
+  <ion-content class="padding-login" ng-controller="loginCtrl">
+    <div class="home">
+    <div class="row">
+      <div class="col">
+          <img class="full-image" src="../lib/images/logo.png">
+        <form class="list">
+          <ion-list>
+            <label class="item item-input">
+              <input type="text" placeholder="Email" ng-model="postData.username">
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="postData.password">
+            </label>
+          </ion-list>
+          <div class="spacer" style="height: 40px;"></div>
+          <button type="submit" id="login-button2" class="button ion-unlocked button-calm button-block"
+                  ng-click="login()"> Log in
+          </button>
+          <a ui-sref="signup" id="signup-button" class="button button-positive  button-block button-clear">Or create an
+            account</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

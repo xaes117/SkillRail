@@ -1,0 +1,67 @@
+<ion-view title="Profile" id="page2">
+  <ion-nav-buttons side="right">
+    <a class="button button-icon ion-gear-a" ui-sref="editProfile"></a>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll='false' delegate-handle="userDetailContent" on-scroll="onUserDetailContentScroll()"
+               header-shrink scroll-event-interval="5">
+    <div class="about-header">
+      <div class="profile-media">
+        <div class="profile-details">
+          <img ng-src="{{this.user.pictureUrl}}" class="img-circle profile-image">
+          <h5 class="color-white h5-profile">
+            {{this.user.firstName}} {{this.user.lastName}}
+          </h5>
+          <p class="p-profile">
+            Phone Number: TBD
+          </p>
+          <p class="p-profile">
+            Average rating: {{this.user.averageRating}}/5
+          </p>
+        </div>
+        <img ng-src="lib/images/icon-profile-overlay.jpg" class="about-image profile-background-image"
+             style="vertical-align:middle;">
+      </div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Tagline </h5>
+      <div class="profile-text">{{this.user.title}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Location </h5>
+      <div class="profile-text">{{this.user.location}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Profile Summary </h5>
+      <div class="profile-text">{{this.user.aboutMe}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title"> Short description </h5>
+      <div class="profile-text"> {{this.user.description}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Skill</h5>
+      <div class="profile-text">{{this.user.skills}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Course</h5>
+      <div class="profile-text">{{this.user.currentCourse}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Institution</h5>
+      <div class="profile-text">{{user.currentUniversity}}</div>
+    </div>
+
+    <div class="card-profile padding-profile">
+      <h5 class="profile-title">Interests</h5>
+      <div class="profile-text" ng-repeat="interest in this.user.interests"> {{interest.title}}</div>
+    </div>
+
+  </ion-content>
+</ion-view>

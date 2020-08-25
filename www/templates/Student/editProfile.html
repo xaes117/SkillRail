@@ -1,0 +1,47 @@
+<ion-view title="Edit Profile" class="ng-scope">
+  <ion-content overflow-scroll="true" padding="true" class="has-header ng-scope" ng-controller="editProfileCtrl as child">
+    <ion-item class="item-divider item-calm">Profile Information</ion-item>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Tagline </span>
+      <input id="businessName" placeholder="Tagline" type="text" value={{this.temp["title"]}} ng-model="temp.title">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Location</span>
+      <input type="text" placeholder="Where are you" value={{this.temp["location"]}} ng-model="this.temp.location">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Profile Summary</span>
+      <textarea style="width: 95%; height: 100px;" placeholder="What do you do" value={{this.temp["aboutMe"]}} ng-model="this.temp.aboutMe"></textarea>
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Short Description</span>
+      <textarea style="width: 95%; height: 50px;" placeholder="You in a few words" value={{this.temp["description"]}} ng-model="this.temp.description"></textarea>
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Skills</span>
+      <textarea style="width: 95%;height: 50px;" placeholder="What are you good at" value={{this.temp["skills"]}} ng-model="this.temp.skills"></textarea>
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Current Course</span>
+      <input type="text" placeholder="What are you currently studying" value={{this.temp["currentCourse"]}} ng-model="this.temp.currentCourse">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Current University</span>
+      <input type="text" placeholder="Where are you currently studying" value={{this.temp["currentUniversity"]}} ng-model="this.temp.currentUniversity">
+    </label>
+    <div class="spacer calm" style="height: 10px;"></div>
+    <ion-item class="item-divider item-calm">Interests</ion-item>
+    <ion-list ng-model="list">
+      <div ng-repeat="item in interests">
+      <ion-checkbox ng-model="item.checked" ng-true-value="true" ng-false-value="false">
+        {{ item.title }}
+      </ion-checkbox>
+      </div>
+    </ion-list>
+    <div class="spacer calm" style="height: 10px;"></div>
+    <div class="button-bar">
+      <a class="button button-assertive button-block" ui-sref="tabsController.profile">Cancel</a>
+      <a class="button button-balanced button-block" ng-click="saveProfileSettings()" ui-sref="tabsController.profile">Save</a>
+    </div>
+  </ion-content>
+</ion-view>

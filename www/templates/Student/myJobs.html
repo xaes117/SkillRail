@@ -1,0 +1,17 @@
+<ion-view title="Current Activity" id="page6">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <!-- <p> In the real page these items will only appear when there is at least 1 item in the list</p>
+    <p> if not the page says you have to apply for jobs :) -->
+    <div class="spacer calm" style="height: 10px;"></div>
+    <ion-item class="item-divider item-calm">My Applications</ion-item>
+    <ion-item ng-repeat="item in this.bidList" ng-click="viewProposal(item)">
+      {{item.project.title}}
+    </ion-item>
+    <ion-item id="viewableBids" class="button button-calm button-block" ng-click="showMore()">Show more</ion-item>
+    <ion-item class="item-divider item-calm">Your Jobs</ion-item>
+    <ion-item ng-repeat="activeProject in this.activeProjects " ng-click="openActiveProject(activeProject)">
+       {{this.activeProject.title}} (status: {{this.activeProject.status.label}})
+     </ion-item>
+    <div class="spacer calm" style="height: 10px;"></div>
+  </ion-content>
+</ion-view>

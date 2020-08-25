@@ -1,0 +1,17 @@
+<ion-view title="{{categoryTitle}}">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <ion-list>
+        <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="item in items | filter: { categories: filterByCategoryTitle() }:true as results" type="item-text-wrap" ng-click="jobSelected(item)">
+          <img ng-src="{{jobsIcon}}">
+          <div class="job-title">{{item.title}}</div>
+          <div style="font-size: 0.69em" class="item-text-wrap job-owner">{{item.projectOwner.displayName}}</div>
+          <div style="font-size: 0.69em" class="item-text-wrap job-description">Potential Learnings: £{{item.budget}}</div>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-energized" ng-click="like(item)"><i class="icon ion-heart"></i></ion-option-button>
+        </ion-item>
+        <div class="search-nothing" ng-if="results.length == 0"> NOTHING CORRESPONDS TO YOUR SEARCH! </div>
+      </ion-list>
+
+    </ion-content>
+</ion-view>

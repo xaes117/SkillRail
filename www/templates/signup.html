@@ -1,0 +1,28 @@
+<ion-view title="Signup" id="page7">
+  <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="signupCtrl">
+    <form class="list">
+      <ion-list>
+        <label class="item item-input" name="email">
+          <input type="text" placeholder="Email" ng-model="postData.email">
+        </label>
+        <label class="item item-input" name="firstName">
+          <input type="text" placeholder="First name" ng-model="postData.firstName">
+        </label>
+        <label class="item item-input" name="lastName">
+          <input type="text" placeholder="Last name" ng-model="postData.lastName">
+        </label>
+        <label class="item item-input" name="password">
+          <input type="password" placeholder="Password" ng-model="postData.password">
+        </label>
+        <label class="item item-input" name="confirmPassword">
+          <input type="password" placeholder="Confirm Password" ng-model="postData.confirmPassword">
+        </label>
+        <label class="item item-input" name="phone">
+          <input type="number" placeholder="Phone number" ng-model="postData.phoneNumber">
+        </label>
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 16px;"></div>
+      <button id="signup-button4" class="button button-calm  button-block" ng-click="signup()">Sign up</button>
+    </form>
+  </ion-content>
+</ion-view>

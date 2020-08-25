@@ -1,0 +1,20 @@
+<ion-view title="Search" id="page4">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <div class="item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input ng-model="this.searchResult" type="search" placeholder="Search for Minternships">
+      </label>
+      <button ng-click="openSearchResult(this.searchResult)" class="button button-clear">
+        Search
+      </button>
+    </div>
+    <ion-list>
+      <ion-item class="item-icon-right item-avatar" ng-repeat="category in categories.data" ng-click="openCategory(this.category.id, this.category.title, this.category.iconUrl)">
+        <img ng-src="{{category.iconUrl}}">
+        <div class="search-text">{{category.title}}</div>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
